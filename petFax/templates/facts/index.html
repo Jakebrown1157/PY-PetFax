@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Document</title>
+    <title>PetFax</title>
 </head>
 <body>
-    <h1>welcome to petFax</h1>
-    {% for pet in pets %}
-        <h2>{{ pet.pet_name}}</h2>
-        <img src="{{ pet.pet_photo }}" alt ='{{ pet.pet_name }}'>
+    <h1> pet facts</h1>
+    {% for fact in facts %}
+        <div>
+            <p> {{fact.fact}}</p>
+            <h4> submitted by {{ fact.submitter }}</h4>
+        </div>
     {% endfor %}
 </body>
 </html>
